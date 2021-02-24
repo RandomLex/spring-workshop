@@ -1,29 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util-2.0.xsd">
 
-    <bean id="john" class="by.academy.spring.model.Student">
-        <constructor-arg name="id" value="1"/>
-        <constructor-arg name="name" value="John"/>
-        <constructor-arg name="marks">
-            <list>
-                <value>8</value>
-                <value>9</value>
-                <value>10</value>
-            </list>
-        </constructor-arg>
-    </bean>
+    <util:map id="john-marks">
+        <entry key="Java" value="8"/>
+        <entry key="Python" value="9"/>
+        <entry key="C" value="10"/>
+    </util:map>
+
+    <bean id="john" class="by.academy.spring.model.Student" p:id="1" p:name="John" p:marks-ref="john-marks"/>
 
     <bean id="bob" class="by.academy.spring.model.Student">
         <property name="id" value="2"/>
         <property name="name" value="Bob"/>
         <property name="marks">
-            <list>
-                <value>7</value>
-                <value>8</value>
-                <value>9</value>
-            </list>
+            <map>
+                <entry key="Java" value="7"/>
+                <entry key="Python" value="8"/>
+                <entry key="C" value="9"/>
+            </map>
         </property>
     </bean>
 
@@ -34,17 +36,17 @@
     </bean>
 
 
+    <util:list id="ee-students">
+        <ref bean="john"/>
+        <ref bean="bob"/>
+    </util:list>
+
 
     <bean id="ee" class="by.academy.spring.model.Group" init-method="create" destroy-method="finish">
         <constructor-arg name="id" value="1"/>
         <constructor-arg name="name" value="EE"/>
         <constructor-arg name="teacher" ref="alex"/>
-        <constructor-arg name="students">
-            <list>
-                <ref bean="john"/>
-                <ref bean="bob"/>
-            </list>
-        </constructor-arg>
+        <constructor-arg name="students" ref="ee-students"/>
     </bean>
 
 </beans>
