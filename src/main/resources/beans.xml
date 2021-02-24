@@ -49,4 +49,18 @@
         <constructor-arg name="students" ref="ee-students"/>
     </bean>
 
+    <bean id="testGroup" class="by.academy.spring.model.Group" init-method="create" destroy-method="finish">
+        <property name="id" value="#{ee.getId() + 1}"/>
+        <property name="name" value="#{'test-' + new java.util.Random().nextInt(100)}"/>
+        <property name="teacher">
+            <bean class="by.academy.spring.model.Teacher" c:id="#{T(Math).round(T(Math).PI)}" c:name="testName" p:salary="100"/>
+        </property>
+        <property name="students">
+            <util:list>
+                <bean class="by.academy.spring.model.Student" c:id="55" c:name="Student"/>
+            </util:list>
+        </property>
+    </bean>
+
+
 </beans>

@@ -11,15 +11,15 @@ import java.util.Map;
 
 @Data
 //@AllArgsConstructor
-//@NoArgsConstructor
+@NoArgsConstructor
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 public class Student extends Person {
     private Map<String, Integer> marks;
 
-//    public Student(int id, String name) {
-//        super(id, name);
-//    }
+    public Student(int id, String name) {
+        super(id, name);
+    }
 //
 //    public Student(int id, String name, List<Integer> marks) {
 //        super(id, name);

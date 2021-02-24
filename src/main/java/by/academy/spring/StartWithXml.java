@@ -12,6 +12,9 @@ public class StartWithXml {
 
         System.out.println(ee);
 
+        System.out.println(ctx.getBean("testGroup", Group.class));
+
+
         ctx.close();
 
     }
