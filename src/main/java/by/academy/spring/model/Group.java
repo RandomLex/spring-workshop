@@ -20,4 +20,13 @@ public class Group implements Printable {
         System.out.println(toString());
     }
 
+    public void create() {
+        System.out.println("Init method is run");
+    }
+
+    public void finish() {
+        System.out.println("Destroy method is run");
+    }
+
+
 }

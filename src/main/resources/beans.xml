@@ -35,7 +35,7 @@
 
 
 
-    <bean id="ee" class="by.academy.spring.model.Group">
+    <bean id="ee" class="by.academy.spring.model.Group" init-method="create" destroy-method="finish">
         <constructor-arg name="id" value="1"/>
         <constructor-arg name="name" value="EE"/>
         <constructor-arg name="teacher" ref="alex"/>
