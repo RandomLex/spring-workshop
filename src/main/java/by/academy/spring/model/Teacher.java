@@ -6,6 +6,8 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -13,6 +15,7 @@ import lombok.ToString;
 @EqualsAndHashCode(callSuper = true)
 public class Teacher extends Person {
     private int salary;
+    private List<String> certificates;
 
     public Teacher(int id, String name) {
         super(id, name);
