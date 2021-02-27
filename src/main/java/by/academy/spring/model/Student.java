@@ -1,15 +1,11 @@
 package by.academy.spring.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import java.util.List;
 import java.util.Map;
 
-@Data
 //@AllArgsConstructor
 @NoArgsConstructor
 @ToString(callSuper = true)
@@ -29,5 +25,13 @@ public class Student extends Person {
     @Override
     public void print(String str) {
         System.out.println(toString());
+    }
+
+    public Map<String, Integer> getMarks() {
+        return this.marks;
+    }
+
+    public void setMarks(Map<String, Integer> marks) {
+        this.marks = marks;
     }
 }
