@@ -19,8 +19,8 @@ import java.util.List;
 public class Group implements Printable {
     private int id;
     private String name;
-    @Autowired(required = true)
-    @Qualifier("anton")
+//    @Autowired(required = true)
+//    @Qualifier("anton")
     private Teacher teacher;
     private List<Student> students;
 
