@@ -37,15 +37,15 @@
     </bean>
 
     <bean id="alex" class="by.academy.spring.model.Teacher">
-<!--        <qualifier value="alex"/>-->
+        <qualifier type="by.academy.spring.qualifiers.TeacherQualifier"/>
         <property name="id" value="${alex.id}"/>
         <property name="name" value="${alex.name}"/>
         <property name="salary" value="100"/>
         <property name="certificates" value="${alex.certificates}"/>
     </bean>
 
-    <bean id="anton" class="by.academy.spring.model.Teacher">
-        <qualifier value="anton1"/>
+    <bean id="anton" class="by.academy.spring.model.Mentor">
+        <qualifier type="by.academy.spring.qualifiers.MentorQualifier"/>
         <property name="id" value="${anton.id}"/>
         <property name="name" value="${anton.name}"/>
         <property name="salary" value="100"/>

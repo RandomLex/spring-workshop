@@ -1,10 +1,11 @@
 package by.academy.spring.model;
 
+import by.academy.spring.qualifiers.MentorQualifier;
+import by.academy.spring.qualifiers.TeacherQualifier;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class Group implements Printable {
     private int id;
     private String name;
     @Autowired
-    @Qualifier("anton1")
+    @TeacherQualifier
     private Teacher teacher;
     private List<Student> students;
 
