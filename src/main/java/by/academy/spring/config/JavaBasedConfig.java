@@ -29,7 +29,7 @@ public class JavaBasedConfig {
     public Group ee() {
         Group group = new Group(1, "EE" , null);
         group.setStudents(List.of(john(), bob()));
-        group.setTeacher(anton());
+//        group.setTeacher(anton());
         return group;
     }
 
