@@ -10,23 +10,23 @@ import org.springframework.context.annotation.Import;
 
 import java.util.List;
 
-@Import({TeacherConfig.class, StudentConfig.class})
+//@Import({TeacherConfig.class, StudentConfig.class})
 public class JavaBasedConfig {
-
-    @Autowired
-    private Student john;
-    @Autowired
-    private Student bob;
-
-    @Autowired
-    private Teacher alex;
-
-    @Bean
-    public Group ee() {
-        Group group = new Group(1, "EE" , null);
-        group.setStudents(List.of(john, bob));
-        group.setTeacher(alex);
-        return group;
-    }
+//
+//    @Autowired
+//    private Student john;
+//    @Autowired
+//    private Student bob;
+//
+//    @Autowired
+//    private Teacher alex;
+//
+//    @Bean
+//    public Group ee() {
+//        Group group = new Group("1", "EE" , null);
+//        group.setStudents(List.of(john, bob));
+//        group.setTeacher(alex);
+//        return group;
+//    }
 
 }

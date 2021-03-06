@@ -1,10 +1,12 @@
 package by.academy.spring.model;
 
+import by.academy.spring.qualifiers.TeacherQualifier;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -13,6 +15,8 @@ import java.util.List;
 @NoArgsConstructor
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
+@Component
+@TeacherQualifier
 public class Teacher extends Person {
     private int salary;
     private List<String> certificates;

@@ -10,17 +10,24 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Component("ee")
+@PropertySource("classpath:group.properties")
 public class Group implements Printable {
+    @Value("${ee.id}")
     private int id;
+    @Value("${ee.name}")
     private String name;
-//    @Autowired(required = true)
-//    @Qualifier("anton")
+    @Autowired
+    @MentorQualifier
     private Teacher teacher;
     private List<Student> students;
 
