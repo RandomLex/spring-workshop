@@ -35,19 +35,19 @@
         </property>
     </bean>
 
-    <bean id="alex" class="by.academy.spring.model.Teacher">
+    <bean id="alex" class="by.academy.spring.model.Teacher" primary="true">
         <property name="id" value="${alex.id}"/>
         <property name="name" value="${alex.name}"/>
         <property name="salary" value="100"/>
         <property name="certificates" value="${alex.certificates}"/>
     </bean>
 
-<!--    <bean id="anton" class="by.academy.spring.model.Teacher">-->
-<!--        <property name="id" value="${anton.id}"/>-->
-<!--        <property name="name" value="${anton.name}"/>-->
-<!--        <property name="salary" value="100"/>-->
-<!--        <property name="certificates" value="${anton.certificates}"/>-->
-<!--    </bean>-->
+    <bean id="anton" class="by.academy.spring.model.Teacher">
+        <property name="id" value="${anton.id}"/>
+        <property name="name" value="${anton.name}"/>
+        <property name="salary" value="100"/>
+        <property name="certificates" value="${anton.certificates}"/>
+    </bean>
 
 
     <util:list id="ee-students">
