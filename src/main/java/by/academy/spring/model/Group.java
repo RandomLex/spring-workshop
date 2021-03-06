@@ -18,7 +18,7 @@ import java.util.List;
 public class Group implements Printable {
     private int id;
     private String name;
-    @Autowired
+    @Autowired(required = false)
     @CustomQualifierWithEnum(teacherType = TeacherType.MENTOR)
 //    @TeacherQualifier
     private Teacher teacher;
