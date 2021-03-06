@@ -1,5 +1,6 @@
 package by.academy.spring.model;
 
+import by.academy.spring.qualifiers.CustomQualifierWithString;
 import by.academy.spring.qualifiers.MentorQualifier;
 import by.academy.spring.qualifiers.TeacherQualifier;
 import lombok.AllArgsConstructor;
@@ -16,7 +17,8 @@ public class Group implements Printable {
     private int id;
     private String name;
     @Autowired
-    @TeacherQualifier
+    @CustomQualifierWithString(someAttribute = "mentorValue")
+//    @TeacherQualifier
     private Teacher teacher;
     private List<Student> students;
 
