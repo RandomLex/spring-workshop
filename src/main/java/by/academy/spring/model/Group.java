@@ -12,8 +12,14 @@ import java.util.List;
 public class Group implements Printable {
     private int id;
     private String name;
-    private Teacher teacher;
+    private Teacher anton;
     private List<Student> students;
+
+    public Group(int id, String name, List<Student> students) {
+        this.id = id;
+        this.name = name;
+        this.students = students;
+    }
 
     @Override
     public void print(String str) {
@@ -21,11 +27,11 @@ public class Group implements Printable {
     }
 
     public void create() {
-        System.out.println("Init method is run");
+        System.out.println("Init method " + name + " is run");
     }
 
     public void finish() {
-        System.out.println("Destroy method is run");
+        System.out.println("Destroy method " + name + " is run");
     }
 
 
