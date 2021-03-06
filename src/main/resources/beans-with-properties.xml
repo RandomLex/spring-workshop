@@ -42,12 +42,12 @@
         <property name="certificates" value="${alex.certificates}"/>
     </bean>
 
-    <bean id="anton" class="by.academy.spring.model.Teacher">
-        <property name="id" value="${anton.id}"/>
-        <property name="name" value="${anton.name}"/>
-        <property name="salary" value="100"/>
-        <property name="certificates" value="${anton.certificates}"/>
-    </bean>
+<!--    <bean id="anton" class="by.academy.spring.model.Teacher">-->
+<!--        <property name="id" value="${anton.id}"/>-->
+<!--        <property name="name" value="${anton.name}"/>-->
+<!--        <property name="salary" value="100"/>-->
+<!--        <property name="certificates" value="${anton.certificates}"/>-->
+<!--    </bean>-->
 
 
     <util:list id="ee-students">
@@ -56,7 +56,7 @@
     </util:list>
 
 
-    <bean id="ee" class="by.academy.spring.model.Group" autowire="byName"  init-method="create" destroy-method="finish">
+    <bean id="ee" class="by.academy.spring.model.Group" autowire="byType" init-method="create" destroy-method="finish">
         <constructor-arg name="id" value="1"/>
         <constructor-arg name="name" value="EE"/>
 <!--        <constructor-arg name="teacher" ref="anton"/>-->
