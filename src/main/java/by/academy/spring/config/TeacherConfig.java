@@ -2,13 +2,16 @@ package by.academy.spring.config;
 
 
 import by.academy.spring.model.Teacher;
+import lombok.experimental.FieldNameConstants;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 import java.util.List;
 
 
+@Configuration
 @PropertySource("classpath:teachers.properties")
 public class TeacherConfig {
 
