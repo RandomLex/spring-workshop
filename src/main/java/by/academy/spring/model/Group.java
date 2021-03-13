@@ -32,6 +32,8 @@ public class Group implements Printable {
     private int id;
     @Value("${ee.name}")
     private String name;
+    @Autowired
+    @Qualifier("studentsEE")
     private List<Student> students;
     private Teacher teacher;
 

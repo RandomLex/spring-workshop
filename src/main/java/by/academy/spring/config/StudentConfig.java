@@ -4,11 +4,15 @@ package by.academy.spring.config;
 import by.academy.spring.model.Student;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 
+@Configuration
 @PropertySource("classpath:students.properties")
 public class StudentConfig {
 
@@ -31,6 +35,14 @@ public class StudentConfig {
         Student student = new Student(1, "John");
         student.setMarks(Map.of("Java", 7, "Python", 8, "C", 9));
         return student;
+    }
+
+    @Bean
+    public List<Student> studentsEE() {
+        List<Student> students = new ArrayList<>();
+        students.add(john());
+        students.add(bob());
+        return students;
     }
 
 }
